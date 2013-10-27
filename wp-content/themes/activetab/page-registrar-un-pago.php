@@ -7,17 +7,55 @@
 get_header();
 get_template_part('template-part', 'wrap-before');
 
+/**
+ * Retorna el mensaje de error de las validaciones o 1 si es válido.
+ */
+function validate()
+{
+    $result = 1;
+
+    if (empty($_POST["ceiba-quinta"])) return 0; //$result = "Debe ingresar la Qta.";
+    if (empty($_POST["ceiba-monto"])) return 0; //$result = "Debe ingresar el Monto.";
+    if (empty($_POST["ceiba-fecha"])) return 0; //$result = "Debe ingresar la Fecha.";
+    if (empty($_POST["ceiba-forma"])) return 0; //$result = "Debe ingresar la Forma de pago.";
+    if (empty($_POST["ceiba-banco"])) return 0; //$result = "Debe ingresar el Banco desde el que paga.";
+    if (empty($_POST["ceiba-confirmacion"])) return 0; //$result = "Debe ingresar el Tipo de pago.";
+
+    return result;
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // validar datos.
-    var_dump($_POST);
+    if (!validate()) {
+        $message = "Debe introducir los campos obligatorios.";
+    }
 
+    $quinta = pods("quinta")->find(array(
+        "ID" => intval($_POST["ceiba_quinta"])
+    ));
+
+    $theDate = DateTime::createFromFormat('Y-m-d',  $_POST["ceiba-fecha"])->format('d/m/Y');
+    $pod = pods("pago");
+    $pago = array (
+        'quinta' => $quinta->id(), //intval($_POST["ceiba_quinta"]),
+        'monto' => floatval($_POST["ceiba_monto"]),
+        'fecha' => $theDate,
+        'tipo_de_pago' => intval($_POST["ceiba_forma"]),
+        'numero' => intval($_POST["ceiba_confirmacion"]),
+        'title' => $quinta->field("nombre")."-".$theDate
+    );
+
+    $id = $pod->add($pago);
+    var_dump($id);
 }
 
 ?>
 
     Llene el formulario para registrar su pago.
 
+
+    <span class="asterisk"><?php echo $message ?></span>
     <form class="form-payment" method="post" action="<?php echo get_current_url() ?>">
 
         <label><span class="asterisk">*</span>Quinta:</label>
@@ -38,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         <label><span class="asterisk">*</span>Fecha:</label>
-        <input type="date"/>
+        <input name="ceiba-fecha" type="date"/>
 
         <label><span class="asterisk">*</span>Forma de pago:</label>
         <select name="ceiba-forma" class="form-payment-select">
@@ -65,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select>
 
         <label><span class="asterisk">*</span>Nº de confirmación o depósito:</label>
-        <input type="text" name="ceiba-tipo"/>
+        <input type="text" name="ceiba-confirmacion"/>
         <button type="submit">Enviar</button>
     </form>
 
