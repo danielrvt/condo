@@ -13,9 +13,14 @@ get_template_part('template-part', 'wrap-before');
 function validate()
 {
     $result = 1;
+    $theDate = DateTime::createFromFormat('Y-m-d', $_POST["ceiba-fecha"]); //->format('d-m-Y');
+
+    if (!is_object($theDate)) {
+        return 0;
+    }
 
     if (empty($_POST["ceiba-quinta"])) return 0; //$result = "Debe ingresar la Qta.";
-    if (empty($_POST["ceiba-monto"])) return 0; //$result = "Debe ingresar el Monto.";
+    if (empty($_POST["ceiba-monto"]) || intval($_POST["ceiba-monto"]) < 1)  return 0; //$result = "Debe ingresar el Monto.";
     if (empty($_POST["ceiba-fecha"])) return 0; //$result = "Debe ingresar la Fecha.";
     if (empty($_POST["ceiba-forma"])) return 0; //$result = "Debe ingresar la Forma de pago.";
     if (empty($_POST["ceiba-banco"])) return 0; //$result = "Debe ingresar el Banco desde el que paga.";
@@ -29,25 +34,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!validate()) {
         $message = "Debe introducir los campos obligatorios.";
+    } else {
+
+        $quinta = pods("quinta", intval($_POST["ceiba-quinta"]));
+        $theDate = DateTime::createFromFormat('Y-m-d', $_POST["ceiba-fecha"])->format('d/m/Y');
+        $pod = pods("pago");
+        $pago = array(
+            'quinta' => $quinta->id(), //intval($_POST["ceiba_quinta"]),
+            'monto' => floatval($_POST["ceiba_monto"]),
+            'fecha' => $theDate,
+            'tipo_de_pago' => intval($_POST["ceiba_forma"]),
+            'numero' => intval($_POST["ceiba_confirmacion"]),
+            'title' => $quinta->field("nombre") . "-" . $theDate
+        );
+
+        $id = $pod->add($pago);
     }
-
-    $quinta = pods("quinta")->find(array(
-        "ID" => intval($_POST["ceiba_quinta"])
-    ));
-
-    $theDate = DateTime::createFromFormat('Y-m-d',  $_POST["ceiba-fecha"])->format('d/m/Y');
-    $pod = pods("pago");
-    $pago = array (
-        'quinta' => $quinta->id(), //intval($_POST["ceiba_quinta"]),
-        'monto' => floatval($_POST["ceiba_monto"]),
-        'fecha' => $theDate,
-        'tipo_de_pago' => intval($_POST["ceiba_forma"]),
-        'numero' => intval($_POST["ceiba_confirmacion"]),
-        'title' => $quinta->field("nombre")."-".$theDate
-    );
-
-    $id = $pod->add($pago);
-    var_dump($id);
 }
 
 ?>
