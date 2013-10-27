@@ -7,14 +7,11 @@
 get_header();
 get_template_part('template-part', 'wrap-before');
 
-// validar datos.
-//$quintas = pods("quinta")->find();
-$bancos = pods("banco")->find();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // validar datos.
+    var_dump($_POST);
 
-while ($quintas->fetch()) {
-    var_dump($quintas->field("ID"));
-    var_dump($quintas->field("nombre"));
 }
 
 ?>
@@ -22,41 +19,53 @@ while ($quintas->fetch()) {
     Llene el formulario para registrar su pago.
 
     <form class="form-payment" method="post" action="<?php echo get_current_url() ?>">
-        <label><span class="red">*</span>Quinta:</label>
-        <select name="quinta">
 
+        <label><span class="asterisk">*</span>Quinta:</label>
+        <select name="ceiba-quinta" class="form-payment-select">
             <?php
-                $quintas = pods("quinta")->find();
-                while ($quintas->fetch()):
-            ?>
-                <option value="<?php echo $quintas->field("ID") ?>">
+            $quintas = pods("quinta")->find();
+            while ($quintas->fetch()):
+                ?>
+                <option value="<?php echo $quintas->id() ?>">
                     <?php echo $quintas->field("nombre") ?>
                 </option>
             <?php endwhile ?>
         </select>
 
-        <label><span class="red">*</span>Monto:</label>
-        <input type="text" name="monto"/>
 
-        <label><span class="red">*</span>Fecha:</label>
+        <label><span class="asterisk">*</span>Monto:</label>
+        <input type="text" name="ceiba-monto"/>
+
+
+        <label><span class="asterisk">*</span>Fecha:</label>
         <input type="date"/>
 
-        <label><span class="red">*</span>Forma de pago:</label>
-        <select name="tipo">
-            <option value="deposito">Depósito</option>
-            <option value="transferencia">Transferencia</option>
+        <label><span class="asterisk">*</span>Forma de pago:</label>
+        <select name="ceiba-forma" class="form-payment-select">
+            <?php
+            $formas = pods("forma_de_pago")->find();
+            while ($formas->fetch()):
+                ?>
+                <option value="<?php echo $formas->field("ID") ?>">
+                    <?php echo $formas->field("nombre") ?>
+                </option>
+            <?php endwhile ?>
         </select>
 
-        <label><span class="red">*</span>Banco:</label>
-        <select name="banco">
-            <option value="banesco">Banesco</option>
-            <option value="provincial">Provincial</option>
-            <option value="mercantil">Mercantil</option>
+        <label><span class="asterisk">*</span>Banco:</label>
+        <select name="ceiba-banco" class="form-payment-select">
+            <?php
+            $bancos = pods("banco")->find();
+            while ($bancos->fetch()):
+                ?>
+                <option value="<?php echo $bancos->field("ID") ?>">
+                    <?php echo $bancos->field("nombre") ?>
+                </option>
+            <?php endwhile ?>
         </select>
 
-        <label><span class="red">*</span>Nº de confirmación o depósito:</label>
-        <input type="text" name="tipo"/>
-
+        <label><span class="asterisk">*</span>Nº de confirmación o depósito:</label>
+        <input type="text" name="ceiba-tipo"/>
         <button type="submit">Enviar</button>
     </form>
 

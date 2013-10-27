@@ -973,6 +973,17 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 	opacity: 1;
 }
 
+
+/* ====== General ======= */
+.asterisk {
+    color: #ff0000;
+}
+
+/* ====== realizar un pago ======= */
+.form-payment-select {
+    width: 60%;
+}
+
 .form-payment label,
 .form-payment button {
     display: block;
@@ -982,3 +993,4 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 .form-payment input {
     width: 60%;
 }
+
