@@ -20,7 +20,7 @@ function validate()
     }
 
     if (empty($_POST["ceiba-quinta"])) return 0; //$result = "Debe ingresar la Qta.";
-    if (empty($_POST["ceiba-monto"]) || intval($_POST["ceiba-monto"]) < 1)  return 0; //$result = "Debe ingresar el Monto.";
+    if (empty($_POST["ceiba-monto"]) || intval($_POST["ceiba-monto"]) < 1) return 0; //$result = "Debe ingresar el Monto.";
     if (empty($_POST["ceiba-fecha"])) return 0; //$result = "Debe ingresar la Fecha.";
     if (empty($_POST["ceiba-forma"])) return 0; //$result = "Debe ingresar la Forma de pago.";
     if (empty($_POST["ceiba-banco"])) return 0; //$result = "Debe ingresar el Banco desde el que paga.";
@@ -54,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
+    <div id="payment-info">
+        <?php dynamic_sidebar("payment-info") ?>
+    </div>
+
     Llene el formulario para registrar su pago.
 
 
@@ -75,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label><span class="asterisk">*</span>Monto:</label>
         <input type="text" name="ceiba-monto"/>
-
 
         <label><span class="asterisk">*</span>Fecha:</label>
         <input name="ceiba-fecha" type="date"/>

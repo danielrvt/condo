@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b40435e-7b6e-4b0f-9d9a-d9564096af55" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/uploads/2013/10/ceiba_icon-150x125.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/uploads/2013/10/ceiba_icon.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/activetab/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/activetab/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/activetab/page-registrar-un-pago.php" afterPath="$PROJECT_DIR$/wp-content/themes/activetab/page-registrar-un-pago.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ceiba.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +29,18 @@
       <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="29" selection-start="3248" selection-end="3248" vertical-scroll-proportion="-0.0" vertical-offset="1155" max-vertical-offset="7500">
-              <folding />
+            <state line="124" column="21" selection-start="5162" selection-end="5174" vertical-scroll-proportion="-5.0" vertical-offset="1740" max-vertical-offset="8205">
+              <folding>
+                <marker date="1382900693000" expanded="true" signature="6128:6213" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="7422:8117" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="7442:8014" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="8186:12041" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="8269:11961" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="8325:11426" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="8397:10986" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="11163:11347" placeholder="..." />
+                <marker date="1382900693000" expanded="true" signature="11604:11889" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,7 +48,7 @@
       <file leaf-file-name="page-registrar-un-pago.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/page-registrar-un-pago.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="5" selection-start="386" selection-end="386" vertical-scroll-proportion="-0.23076923" vertical-offset="378" max-vertical-offset="1815">
+            <state line="79" column="60" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.58808935" vertical-offset="948" max-vertical-offset="1860">
               <folding>
                 <element signature="e#7#50#0" expanded="true" />
               </folding>
@@ -49,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/style.css">
+      <file leaf-file-name="widgets.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-includes/widgets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="978" column="19" selection-start="21096" selection-end="21096" vertical-scroll-proportion="0.0" vertical-offset="14257" max-vertical-offset="15030">
+            <state line="849" column="24" selection-start="27065" selection-end="27067" vertical-scroll-proportion="-11.375" vertical-offset="12282" max-vertical-offset="18960">
               <folding />
             </state>
           </provider>
@@ -81,6 +88,7 @@
         <option value="$PROJECT_DIR$/wp-content/themes/activetab/page-payment.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/activetab/editor-style.css" />
         <option value="$PROJECT_DIR$/wp-content/themes/activetab/style.css" />
+        <option value="$PROJECT_DIR$/wp-content/themes/activetab/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/activetab/page-registrar-un-pago.php" />
       </list>
     </option>
@@ -288,11 +296,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="328" selection-end="328" vertical-scroll-proportion="0.28688523" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/single.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
@@ -343,13 +346,6 @@
         <state line="35" column="17" selection-start="895" selection-end="906" vertical-scroll-proportion="0.9208443" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="29" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="7500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/editor-style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="0" selection-start="1810" selection-end="1810" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
@@ -369,9 +365,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="21" selection-start="5162" selection-end="5174" vertical-scroll-proportion="-5.0" vertical-offset="1740" max-vertical-offset="8205">
+          <folding>
+            <marker date="1382900693000" expanded="true" signature="6128:6213" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="7422:8117" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="7442:8014" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="8186:12041" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="8269:11961" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="8325:11426" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="8397:10986" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="11163:11347" placeholder="..." />
+            <marker date="1382900693000" expanded="true" signature="11604:11889" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/widgets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="849" column="24" selection-start="27065" selection-end="27067" vertical-scroll-proportion="-11.375" vertical-offset="12282" max-vertical-offset="18960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/activetab/page-registrar-un-pago.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="5" selection-start="386" selection-end="386" vertical-scroll-proportion="-0.23076923" vertical-offset="378" max-vertical-offset="1815">
+        <state line="79" column="60" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.58808935" vertical-offset="948" max-vertical-offset="1860">
           <folding>
             <element signature="e#7#50#0" expanded="true" />
           </folding>
